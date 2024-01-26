@@ -1,8 +1,8 @@
 package com.example.Spring.service;
 
 import com.example.Spring.domain.Student;
-import com.example.Spring.dto.StudentDto;
 import com.example.Spring.repositoty.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +12,7 @@ public class StudentService {
 
     private final StudentRepository studentRepository;
 
+    @Autowired
     public StudentService(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }

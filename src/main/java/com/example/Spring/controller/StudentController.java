@@ -1,7 +1,6 @@
 package com.example.Spring.controller;
 
 import com.example.Spring.domain.Student;
-import com.example.Spring.dto.StudentDto;
 import com.example.Spring.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,14 +16,9 @@ public class StudentController {
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
-//    @GetMapping("/")
-//    public List<Student> getAllStudents(){
-//        return studentService.getAllStudents();
-//    }
-
     @GetMapping("/")
-    public String getAllStudents(){
-        return "Hello";
+    public List<Student> getAllStudents(){
+        return studentService.getAllStudents();
     }
 
 //    @GetMapping("/{studentName}")
