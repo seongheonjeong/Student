@@ -8,6 +8,7 @@ import lombok.Setter;
 @Table(name = "student")
 public class Student {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // 자동으로 증가하는 시퀀스 사용
     private Long id;
 
     @Column(name = "name")

@@ -22,4 +22,10 @@ public class JpaStudentRepository implements  StudentRepository {
                 .getResultList();
         return result;
     }
+
+    @Override
+    public void addStudent(Student student) {
+        em.persist(student);
+    }
+
 }
