@@ -21,12 +21,30 @@ public class StudentService {
 
 //    public  Student getStudentByUserName(String studentName) {
 //    }
-    @Transactional
+//    @Transactional
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
     }
-    @Transactional
-    public void addStudent(Student student) {
-        studentRepository.addStudent(student);
+    public void addStudent(Student student){
+        studentRepository.save(student);
     }
+    public void deleteStudent(String id){
+        studentRepository.deleteById(id);
+    }
+    public void updateStudent(String id, Student student) {
+        student.setId(id);
+        studentRepository.save(student);
+    }
+//    @Transactional
+//    public void addStudent(Student student) {
+//        studentRepository.addStudent(student);
+//    }
+//
+//    public void deleteStudent(Long id) {
+//        studentRepository.deleteStudent(id);
+//    }
+//
+//    public void updateStudent(Long id, Student student) {
+//        studentRepository.updateStudent(id,student);
+//    }
 }

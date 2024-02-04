@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+//Mysql에서는 id가 long형,몽고db에서는 id가 String형
 @RestController
 @RequestMapping("/students")
 public class StudentController {
@@ -21,13 +22,21 @@ public class StudentController {
     public List<Student> getAllStudents(){
         return studentService.getAllStudents();
     }
-    @Transactional
+//    @Transactional
     @PostMapping("/post")
     public void addStudent(@RequestBody Student student) {
         studentService.addStudent(student);
     }
-
-//    @PutMapping("/put")
+//
+//    @Transactional
+    @DeleteMapping("/delete") //DELETE 요청은 요청 바디를 가지지 않는 것이 일반적
+    public void deleteStudent(@RequestParam String id){//@RequestParam Long id){
+        studentService.deleteStudent(id);
+    }
+    @PutMapping("/put")
+    public void updateStudent(@RequestParam String id,@RequestBody Student student) {
+        studentService.updateStudent(id,student);
+    }
 
 //    @GetMapping("/{studentName}")
 //    //URI 경로에서 특정 부분 추출

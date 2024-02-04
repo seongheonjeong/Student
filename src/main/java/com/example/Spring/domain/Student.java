@@ -1,30 +1,33 @@
 package com.example.Spring.domain;
 
-import jakarta.persistence.*;
+//import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "student")
+//@Entity
+//@Table(name = "student")
+
+@Document(collection="Student")
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // 자동으로 증가하는 시퀀스 사용
-    private Long id;
-
-    @Column(name = "name")
+    //@GeneratedValue(strategy = GenerationType.IDENTITY) // 자동으로 증가하는 시퀀스 사용
+    private String id;
+//    @Column(name = "name")
     private String name;
 
-    @Column(name = "phone_number")
-    private String phoneNumber;
+//    @Column(name = "phone_number")
+    private String phone_number;
 
-    @Column(name = "studentid")
-    private int studentId;
+//    @Column(name = "studentid")
+    private int studentid;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -37,18 +40,18 @@ public class Student {
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return phone_number;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumber(String phone_number) {
+        this.phone_number = phone_number;
     }
 
     public int getStudentId() {
-        return studentId;
+        return studentid;
     }
 
     public void setStudentId(int studentId) {
-        this.studentId = studentId;
+        this.studentid = studentId;
     }
 }
