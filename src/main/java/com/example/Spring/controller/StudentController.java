@@ -22,27 +22,17 @@ public class StudentController {
     public List<Student> getAllStudents(){
         return studentService.getAllStudents();
     }
-//    @Transactional
     @PostMapping("/post")
     public void addStudent(@RequestBody Student student) {
         studentService.addStudent(student);
     }
-//
-//    @Transactional
     @DeleteMapping("/delete") //DELETE 요청은 요청 바디를 가지지 않는 것이 일반적
-    public void deleteStudent(@RequestParam String id){//@RequestParam Long id){
+    public void deleteStudent(@RequestParam Long id){//@RequestParam String id){
         studentService.deleteStudent(id);
     }
     @PutMapping("/put")
-    public void updateStudent(@RequestParam String id,@RequestBody Student student) {
+    public void updateStudent(@RequestParam Long id,@RequestBody Student student) {
         studentService.updateStudent(id,student);
     }
-
-//    @GetMapping("/{studentName}")
-//    //URI 경로에서 특정 부분 추출
-//    public Student getStudentByUserName(@PathVariable String studentName){
-//        return studentService.getStudentByUserName(studentName);
-//    }
-
 }
 

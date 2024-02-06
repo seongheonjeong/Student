@@ -1,26 +1,30 @@
 package com.example.Spring.domain;
 
-//import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-//@Entity
-//@Table(name = "student")
-
-@Document(collection="Student")
+@Entity
+@Table(name = "student")
+//@Document(collection="Student")
 public class Student {
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY) // 자동으로 증가하는 시퀀스 사용
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // 아이디 자동증가
     private String id;
-//    @Column(name = "name")
+    @Column(name = "name")
+//    @JsonProperty("name") //매핑시켜주는 어노테이션
     private String name;
 
-//    @Column(name = "phone_number")
+    @Column(name = "phone_number")
+//    @JsonProperty("phone_number")
+
     private String phone_number;
 
-//    @Column(name = "studentid")
+
+//    @JsonProperty("studentid")
+    @Column(name = "student_id")
     private int studentid;
 
     public String getId() {

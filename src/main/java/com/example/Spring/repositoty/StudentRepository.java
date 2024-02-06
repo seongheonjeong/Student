@@ -8,22 +8,14 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface StudentRepository extends MongoRepository<Student,String> {
+public interface StudentRepository {//extends MongoRepository<Student,String> {
 
-    List<Student> findAll();
+//    List<Student> findAll(); //몽고 db 조회
+//    Student save(Student student); //몽고 db 저장 및 업데이트
+//    void deleteById(String id); //몽고 db 삭제
 
-    Student save(Student student);
-
-
-    void deleteById(String id);
-
-
-    //    List<Student> findAll();
-//
-//    void addStudent(Student student);
-//
-//
-//    void deleteStudent(Long id);
-//
-//    void updateStudent(Long id, Student student);
+    List<Student> findAll(); //mysql db조회
+    void addStudent(Student student); //mysql db 저장
+    void deleteStudent(Long id); //mysql db 삭제
+    void updateStudent(Long id, Student student); //mysql db 업데이트
 }
