@@ -14,7 +14,7 @@ import java.util.List;
 public class JpaStudentRepository implements  StudentRepository {
 
     @PersistenceContext
-  //스레드간에 공유 절대하면 안되기때문에 스프링이 관리해주는 방식
+    //스레드간에 공유 절대하면 안되기때문에 스프링이 관리해주는 방식
     private final EntityManager em;
     @Autowired
     public JpaStudentRepository(EntityManager em) {
@@ -43,17 +43,15 @@ public class JpaStudentRepository implements  StudentRepository {
     }
 
 //     JPA에 따로 수정메서드는 없음
-//    1. JPA에서는 트랜잭션이 끝나는 시점에 변화가 있는 모든 엔티티 객체를 데이터베이스에 자동으로 반영해 준다.
-//    (변경을 감지해서 DB에 반영한다 해서 변경감지라고 이해하자)
-//    2. 이때 변화가 있다의 기준은 최초 조회 상태
-//    3. JPA에서는 엔티티를 조회하면 해당 엔티티의 조회 상태 그대로 스냅샷을 생성
-//    4. 그리고 트랜잭션이 끝나는 시점에는 이 스냅샷과 비교해서 다른 점이 있다면 Update Query를 데이터베이스로 전달한다.
+//    1. JPA에서는 트랜잭션이 끝나는 시점에 변화가 있는 모든 엔티티 객체를 데이터베이스에 자동으로 반영
+//    2. 변화가 있다의 기준은 최초 조회 상태
+//    3. JPA에서는 엔티티를 조회하면 해당 엔티티의 조회 상태 그대로 스냅샷 생성
+//    4. 트랜잭션이 끝나는 시점에 이 스냅샷과 비교해서 다른 점이 있다면 Update Query를 데이터베이스로 전달
     @Override
     public void updateStudent(Long id, Student student) {
         Student temp=em.find(Student.class,id);
         temp.setName(student.getName());
-        temp.setPhoneNumber(student.getPhoneNumber());
-        temp.setStudentId(student.getStudentId());
+        temp.setGrade(student.getGrade());
     }
 
 }

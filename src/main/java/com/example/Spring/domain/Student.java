@@ -16,17 +16,15 @@ public class Student {
     @Column(name = "name")
 //    @JsonProperty("name") //매핑시켜주는 어노테이션
     private String name;
-
-    @Column(name = "phone_number")
-//    @JsonProperty("phone_number")
-
-    private String phone_number;
-
-
-//    @JsonProperty("studentid")
-    @Column(name = "student_id")
-    private int studentid;
-
+    @Column(name = "grade")
+//    @JsonProperty("grade")
+    private String grade;
+    public String getGrade() {
+        return grade;
+    }
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
     public String getId() {
         return id;
     }
@@ -43,19 +41,4 @@ public class Student {
         this.name = name;
     }
 
-    public String getPhoneNumber() {
-        return phone_number;
-    }
-
-    public void setPhoneNumber(String phone_number) {
-        this.phone_number = phone_number;
-    }
-
-    public int getStudentId() {
-        return studentid;
-    }
-
-    public void setStudentId(int studentId) {
-        this.studentid = studentId;
-    }
 }

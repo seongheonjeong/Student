@@ -10,7 +10,7 @@ import java.util.List;
 
 //Mysql에서는 id가 long형,몽고db에서는 id가 String형
 @RestController
-@RequestMapping("/students")
+@RequestMapping("/student")
 public class StudentController {
     private final StudentService studentService;
 
@@ -18,20 +18,20 @@ public class StudentController {
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
-    @GetMapping("/get")
-    public List<Student> getAllStudents(){
-        return studentService.getAllStudents();
+    @GetMapping("/")
+    public List<Student> getStudents(){
+        return studentService.getStudents();
     }
-    @PostMapping("/post")
+    @PostMapping("/")
     public void addStudent(@RequestBody Student student) {
         studentService.addStudent(student);
     }
-    @DeleteMapping("/delete") //DELETE 요청은 요청 바디를 가지지 않는 것이 일반적
-    public void deleteStudent(@RequestParam Long id){//@RequestParam String id){
+    @DeleteMapping("/{id}") //DELETE 요청은 요청 바디를 가지지 않는 것이 일반적
+    public void deleteStudent(@PathVariable Long id){//@RequestParam String id){
         studentService.deleteStudent(id);
     }
-    @PutMapping("/put")
-    public void updateStudent(@RequestParam Long id,@RequestBody Student student) {
+    @PutMapping("/{id}")
+    public void updateStudent(@PathVariable Long id,@RequestBody Student student) {
         studentService.updateStudent(id,student);
     }
 }
