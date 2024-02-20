@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 아이디 자동증가
-    private String id;
+    private Long id;
     @Column(name = "name")
 //    @JsonProperty("name") //매핑시켜주는 어노테이션
     private String name;
@@ -25,11 +25,11 @@ public class Student {
     public void setGrade(String grade) {
         this.grade = grade;
     }
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
