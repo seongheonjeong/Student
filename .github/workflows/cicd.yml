@@ -42,9 +42,10 @@ jobs:
       - name: Access to target server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
+          host: 113.198.234.57
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
+          port: 22
           script: |
            
             ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }}
