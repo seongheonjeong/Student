@@ -42,7 +42,7 @@ jobs:
       - name: Access to target server
         uses: appleboy/ssh-action@master
         with:
-          host: 113.198.234.57
+          host: 113.198.234.57:3000
           username: 테스트
           password: 123456789
           port: 22
