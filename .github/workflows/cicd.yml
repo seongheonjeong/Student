@@ -50,7 +50,7 @@ jobs:
             
             docker ps
             
-            docker stop java-image
+            docker stop java-image-1
 
             docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.PROJECT_NAME }}
             
