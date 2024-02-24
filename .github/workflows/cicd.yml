@@ -46,14 +46,16 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            seongheonjeong
-            
+           
+            ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }}
+
+          
             docker ps
-            
+
             docker stop java-image-1
 
             docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.PROJECT_NAME }}
-            
-            docker run --rm --name java-image -d -p 22:8080 ${{ secrets.DOCKER_USERNAME }}/${{ secrets.PROJECT_NAME }}
+
+            docker run --rm --name java-image -d -p 3000:8080 ${{ secrets.DOCKER_USERNAME }}/${{ secrets.PROJECT_NAME }}
 
             docker ps
