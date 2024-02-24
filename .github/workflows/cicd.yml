@@ -31,7 +31,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/${{ github.repository_name }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.PROJECT_NAME }}
 
 
   access-and-run:
@@ -52,8 +52,8 @@ jobs:
             
             docker stop java-image
 
-            docker pull ${{ secrets.DOCKER_USERNAME }}/${{ github.repository_name }}
+            docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.PROJECT_NAME }}
             
-            docker run --rm --name java-image -d -p 3000:8080 ${{ secrets.DOCKER_USERNAME }}/${{ github.repository_name }}
+            docker run --rm --name java-image -d -p 3000:8080 ${{ secrets.DOCKER_USERNAME }}/${{ secrets.PROJECT_NAME }}
 
             docker ps
