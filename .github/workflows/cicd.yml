@@ -45,7 +45,6 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
-          key: ${{ secrets.NAS_SSH_PRIVATE_KEY }}
-          port: 22
+          port: 3000
           script: |
             
