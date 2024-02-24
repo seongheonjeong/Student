@@ -47,4 +47,13 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 3000
           script: |
+            seongheonjeong
+            
+            docker ps
+            
+            docker stop java-image-1
+            docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.PROJECT_NAME }}
+            
+            docker run --rm --name java-image -d -p 3000:8080 ${{ secrets.DOCKER_USERNAME }}/${{ secrets.PROJECT_NAME }}
+            docker ps
             
