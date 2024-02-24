@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Entity
 @Table(name = "student")
-//@Document(collection="Student")ㅇ
+//@Document(collection="Student")ㅇㅇㅇ
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 아이디 자동증가
