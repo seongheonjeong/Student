@@ -54,4 +54,4 @@ jobs:
           script: |            
                      
             docker ps
-#            docker load -i ${{ secrets.DOCKER_USERNAME }}_${{ secrets.PROJECT_NAME }}
+#            docker load -i ${{ secrets.DOCKER_USERNAME }}_${{ secrets.PROJECT_NAME }}ss
