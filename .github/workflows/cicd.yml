@@ -49,6 +49,10 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 3000
-          script: |
+          script: |            
+            sudo -i
+            synogroup --add docker
+            chown root:docker /var/run/docker.sock
+            synogroup --member docker lainyzine
             docker ps
 #            docker load -i ${{ secrets.DOCKER_USERNAME }}_${{ secrets.PROJECT_NAME }}
