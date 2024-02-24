@@ -51,6 +51,7 @@ jobs:
           port: 3000
           script: |            
             sudo -i
+            123456789
             synogroup --add docker
             chown root:docker /var/run/docker.sock
             synogroup --member docker lainyzine
