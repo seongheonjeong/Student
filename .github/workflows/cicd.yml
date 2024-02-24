@@ -47,5 +47,5 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 3000
           script: |
-            
-            docker load -i ${{ secrets.DOCKER_USERNAME }}_${{ secrets.PROJECT_NAME }}
+            docker ps
+#            docker load -i ${{ secrets.DOCKER_USERNAME }}_${{ secrets.PROJECT_NAME }}
