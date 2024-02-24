@@ -42,9 +42,10 @@ jobs:
       - name: Access to target server
         uses: appleboy/ssh-action@master
         with:
-          host: 113.198.234.57
-          username: root
-          password: 1234
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          key: ${{ secrets.NAS_SSH_PRIVATE_KEY }}
           port: 22
           script: |
             
