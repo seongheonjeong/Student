@@ -51,5 +51,6 @@ jobs:
           port: 3000
           run: |                      
             docker ps
+            docker stop mysql-1
             docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.PROJECT_NAME }}
             
