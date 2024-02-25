@@ -49,8 +49,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 3000
-          run: |
-            ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} -p 3000
-            docker stop mysql-1
+          script: |
+            sudo docker stop mysql-1
             
             
