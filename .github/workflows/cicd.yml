@@ -45,11 +45,11 @@ jobs:
       - name: Access to target server
         uses: appleboy/ssh-action@master
         with:
-          host: 113.198.234.57
-          username: 테스트2
-          password: 123456789
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
           port: 3000
           script: |
-            docker 
+            ls
             
             
