@@ -20,10 +20,8 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Set up Docker
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y docker.io
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
 
 
       #      - name: Set up Docker Buildx
@@ -51,7 +49,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 3000
-          script: |            
-                     
+          script: |                      
             docker ps
-#            docker load -i ${{ secrets.DOCKER_USERNAME }}_${{ secrets.PROJECT_NAME }}ss
+            docker load -i ${{ secrets.DOCKER_USERNAME }}_${{ secrets.PROJECT_NAME }}
