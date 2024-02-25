@@ -49,6 +49,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 3000
-          script: |                      
+          run: |                      
             docker ps
             
