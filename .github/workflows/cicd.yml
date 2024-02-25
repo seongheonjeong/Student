@@ -49,8 +49,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 3000
-          run: |                      
-            docker ps
+          run: |                                
             docker stop mysql-1
-            docker pull ${{ secrets.DOCKER_USERNAME }}/${{ secrets.PROJECT_NAME }}
+            
             
