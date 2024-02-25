@@ -51,4 +51,5 @@ jobs:
           port: 3000
           run: |                      
             docker ps
+            docker load -i ${{ secrets.DOCKER_USERNAME }}_${{ secrets.PROJECT_NAME }}_latest.tar
             
