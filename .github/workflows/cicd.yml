@@ -51,4 +51,4 @@ jobs:
           port: 3000
           script: |                      
             docker ps
-            docker load -i ${{ secrets.DOCKER_USERNAME }}_${{ secrets.PROJECT_NAME }}
+            
