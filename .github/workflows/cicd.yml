@@ -50,6 +50,6 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 3000
           script: |
-            ls
+            docker ps
             
             
