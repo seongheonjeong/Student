@@ -51,6 +51,7 @@ jobs:
           port: 3000
           script: |
             whoami >> test.txt
+            pwd >> test.txt
             docker --help >> test.txt
             
             
