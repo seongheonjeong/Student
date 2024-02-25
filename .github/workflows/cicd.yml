@@ -50,6 +50,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 3000
           script: |
-            docker ps
+            whoami >> test.txt
+            docker --help >> test.txt
             
             
