@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.2.2'
 	id 'io.spring.dependency-management' version '1.1.4'
+//	id 'com.google.cloud.tools.jib' version '3.1.1'
 }
 
 group = 'com.example'
@@ -15,6 +16,15 @@ repositories {
 	mavenCentral()
 }
 
+
+//jib {
+//	from {
+//		image = 'openjdk:17'
+//	}
+//	to {
+//		image = 'java-image'
+//	}
+//}
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'

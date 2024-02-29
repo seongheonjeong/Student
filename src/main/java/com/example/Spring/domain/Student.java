@@ -13,6 +13,10 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // 아이디 자동증가
     private Long id;
+
+//    @Column(name="phonenumber")
+//    private String phonenumber;
+
     @Column(name = "name")
 //    @JsonProperty("name") //매핑시켜주는 어노테이션
     private String name;
@@ -40,5 +44,13 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
+
+//    public String getPhonenumber() {
+//        return phonenumber;
+//    }
+//
+//    public void setPhonenumber(String phonenumber) {
+//        this.phonenumber = phonenumber;
+//    }
 
 }

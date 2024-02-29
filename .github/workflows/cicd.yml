@@ -50,9 +50,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: 3000
           script: |
-            whoami >> test.txt
-            pwd >> test.txt
-            id >> test.txt
-            docker --help >> test.txt
+            sudo docker login -u ${{ secrets.DOCKER_USERNAME}} -p ${{ secrets.DOCKER_PASSWORD }}
+            sudo docker ps
             
             
